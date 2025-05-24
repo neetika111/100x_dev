@@ -5,7 +5,11 @@
 */
 
 function isAnagram(str1, str2) {
-
+  
+  str1 = str1.toLowerCase().replace(/[^a-z]/g, '');
+  str2 = str2.toLowerCase().replace(/[^a-z]/g, '');
+  return str1.split('').sort().join('') === str2.split('').sort().join('');
 }
-
+console.log(isAnagram("rasp", "spar")); 
+console.log(isAnagram("hello", "world"));
 module.exports = isAnagram;
